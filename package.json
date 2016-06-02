@@ -17,11 +17,9 @@
     "start": "brunch watch --server",
     "build": "brunch build --production",
 
-    "postinstall": "npm run tidy",
-
-    "pretidy": "cp package.json.bak package.json",
-    "tidy": "rm package.json.bak",
-    "posttidy": "rm -rf .git/"
+    "presetup": "cp package.json.bak package.json",
+    "setup": "rm package.json.bak && rm -rf .git/",
+    "postsetup": "git init"
   },
   "author": "",
   "license": "ISC"
