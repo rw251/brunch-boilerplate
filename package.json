@@ -21,12 +21,20 @@
     "build": "brunch build --production",
 
     "presetup:linux": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
+    "presetup:gitbash": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
     "presetup:win": "copy package.json.bak package.json && del package.json.bak && del /Q /S .git/",
+
     "setup:linux": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
+    "setup:gitbash": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
     "setup:win": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
-    "setup": "npm run setup:win",
-    "postsetup:win": "git remote add origin %npm_package_config_repo%"
-    
+
+    "postsetup:linux": "git remote add origin $npm_package_config_repo && git push -u origin master && git subtree push --prefix public origin gh-pages",
+    "postsetup:gitbash": "git remote add origin %npm_package_config_repo% && git push -u origin master && git subtree push --prefix public origin gh-pages",
+    "postsetup:win": "git remote add origin %npm_package_config_repo% && git push -u origin master && git subtree push --prefix public origin gh-pages",
+
+    "setup": "npm run setup:gitbash"
+
+
   },
   "author": "",
   "license": "ISC"
