@@ -15,7 +15,7 @@ npm install
 
 - Run the setup script (removes the `.git` folder and updates the `package.json` file)
 ```
-npm setup
+npm run setup
 ```
 
 - Assuming this is going to live in github and be deployed to gh-pages.. Setup a new repository and add the code here
