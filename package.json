@@ -19,7 +19,7 @@
 
     "presetup": "cp package.json.bak package.json",
     "setup": "rm package.json.bak && rm -rf .git/",
-    "postsetup": "git init"
+    "postsetup": "git init && git add -A && git commit -m 'Initial commit'"
   },
   "author": "",
   "license": "ISC"

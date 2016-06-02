@@ -10,7 +10,7 @@ git clone git@github.com:rw251/brunch-boilerplate.git
 
 - Install the dependencies
 ```
-npm install
+cd brunch-boilerplate && npm install
 ```
 
 - Run the setup script (removes the `.git` folder and updates the `package.json` file)
