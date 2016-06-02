@@ -15,13 +15,7 @@
   },
   "scripts": {
     "start": "brunch watch --server",
-    "build": "brunch build --production",
-
-    "postinstall": "npm run tidy",
-
-    "pretidy": "cp package.json.bak package.json",
-    "tidy": "rm package.json.bak",
-    "posttidy": "rm -rf .git/"
+    "build": "brunch build --production"
   },
   "author": "",
   "license": "ISC"
