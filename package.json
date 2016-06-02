@@ -17,9 +17,9 @@
     "start": "brunch watch --server",
     "build": "brunch build --production",
 
-    "presetup": "cp package.json.bak package.json",
-    "setup": "rm package.json.bak && rm -rf .git/",
-    "postsetup": "git init && git add -A && git commit -m \"Initial commit\""
+    "presetup": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
+    "setup": "git init && git add -A && git commit -m \"Initial commit\" && git subtree push --prefix public origin gh-pages",
+    "postsetup": ""
   },
   "author": "",
   "license": "ISC"
