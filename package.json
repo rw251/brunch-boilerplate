@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "config": {
+    "repo": ""
+  },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
     "brunch": "^2.8.0",
@@ -17,9 +20,13 @@
     "start": "brunch watch --server",
     "build": "brunch build --production",
 
-    "presetup": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
-    "setup": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
-    "postsetup": ""
+    "presetup:linux": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
+    "presetup:win": "copy package.json.bak package.json && del package.json.bak && del /Q /S .git/",
+    "setup:linux": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
+    "setup:win": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
+    "setup": "npm run setup:win",
+    "postsetup:win": "git remote add origin %npm_package_config_repo%"
+    
   },
   "author": "",
   "license": "ISC"
