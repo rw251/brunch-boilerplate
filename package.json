@@ -2,7 +2,7 @@
   "name": "brunch-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "config": {
     "repo": ""
   },
@@ -16,24 +16,42 @@
     "sass-brunch": "^2.6.3",
     "uglify-js-brunch": "^2.0.1"
   },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "chart.js": "^2.2.1",
+    "connect-flash": "^0.1.1",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "jade": "^1.11.0",
+    "mongoose": "^4.6.1",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.3.0"
+  },
+  "engines": {
+    "node": "4.2.4"
+  },
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build --production",
+    "postinstall": "npm run build",
+    "watch": "brunch watch",
+    "predebug": "echo In one window launch brunch without server: npm run watch",
+    "debug": "echo Then in second window launch server with debug: node-debug server.js",
 
     "presetup:linux": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
     "presetup:gitbash": "cp package.json.bak package.json && rm package.json.bak && rm -rf .git/",
     "presetup:win": "copy package.json.bak package.json && del package.json.bak && del /Q /S .git/",
 
-    "setup:linux": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
-    "setup:gitbash": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
-    "setup:win": "git init && git add -A && git commit -m \"Initial commit\" && cd public && git init",
-
-    "postsetup:linux": "git remote add origin $npm_package_config_repo && git push -u origin master && git subtree push --prefix public origin gh-pages",
-    "postsetup:gitbash": "git remote add origin %npm_package_config_repo% && git push -u origin master && git subtree push --prefix public origin gh-pages",
-    "postsetup:win": "git remote add origin %npm_package_config_repo% && git push -u origin master && git subtree push --prefix public origin gh-pages",
+    "setup:linux": "git init && git add -A && git commit -m \"Initial commit\" ",
+    "setup:gitbash": "git init && git add -A && git commit -m \"Initial commit\" ",
+    "setup:win": "git init && git add -A && git commit -m \"Initial commit\" ",
 
     "setup": "npm run setup:gitbash"
-
 
   },
   "author": "",
